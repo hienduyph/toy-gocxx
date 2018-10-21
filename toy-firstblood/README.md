@@ -2,11 +2,12 @@
 
 ## Make it works
 ```bash
-$ go get github.com/hienduyph/toy-gocxx/toy-firstblood
+$ git clone https://github.com/hienduyph/toy-gocxx && cd toy-gocxx/toy-firstblood
 $ g++ -c gree.cc
-$ go install
-# Make sure `$GOPATH/bin` in your `$PATH`
-$ toy-firstblood
+$ go build
+$ ./toy-firstblood
+C++ is processing
+Result from Cxx Greetings, Gopher from 2018! We come in peace :)
 ```
 ## Credits
 https://karthikkaranth.me/blog/calling-c-code-from-go/#writing-the-c-code
