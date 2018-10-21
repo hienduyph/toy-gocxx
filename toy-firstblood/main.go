@@ -18,5 +18,5 @@ func main() {
 
 	size := C.greeting(name, year, (*C.char)(ptr))
 	b := C.GoBytes(ptr, size)
-	fmt.Println("vim-go " + string(b))
+	fmt.Println("Result from Cxx " + string(b))
 }
