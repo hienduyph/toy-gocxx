@@ -16,7 +16,17 @@ func main() {
 	ptr := C.malloc(C.sizeof_char * 1024)
 	defer C.free(unsafe.Pointer(ptr))
 
+	// play with simple toy first
 	size := C.greeting(name, year, (*C.char)(ptr))
 	b := C.GoBytes(ptr, size)
-	fmt.Println("Result from Cxx " + string(b))
+	fmt.Println(string(b))
+
+	// now struct
+	gree := C.GopherCXX{
+		name: name,
+		year: year,
+	}
+	size = C.gopher_hello(&gree, (*C.char)(ptr))
+	b = C.GoBytes(ptr, size)
+	fmt.Println(string(b))
 }
